@@ -25,8 +25,18 @@
 /* #define TERMINFO 1 */	/* Define if want terminfo support. */
 				/* there should be a TERMCAP too */
 
-#define _XOPEN_SOURCE 500 /* for unlockpt and ptsname */
+#ifndef _DEFAULT_SOURCE
 #define _DEFAULT_SOURCE
+#endif
+
+#ifndef _XOPEN_SOURCE
+#define _XOPEN_SOURCE 500 /* for unlockpt and ptsname */
+#endif
+
+#if _XOPEN_SOURCE < 500
+#undef _XOPEN_SOURCE
+#define _XOPEN_SOURCE 500
+#endif
 
 #include <sys/types.h>
 #include <sys/socket.h>
