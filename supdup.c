@@ -20,7 +20,7 @@
  * Hacked by Klotz 12/19/88 added response to TDORS.
  * Hacked by Mly 9-Jul-87 to improve reading of supdup escape commands
  * Hacked by Mly July 1987 to do bottom-of-screen cursor-positioning hacks
- *  when escape char is typed 
+ *  when escape char is typed
  * Hacked by Mly 29-Aug-87 to nuke stupid auto_right_margin lossage.
 
  * TODO: Meta, Super, Hyper prefix keys.
@@ -524,7 +524,7 @@ sup_term (void)
  *    exit (1);
  *  }
  */
- 
+
   if (do_losingly_scroll) {
       inits[13] |= 01;
   }
@@ -710,7 +710,7 @@ read_char (void)
 	    perror("select(read_char)");
 #else
 	  FD_SET(fileno(stdin),&readfds);
-	  if (select(fileno(stdin)+1, &readfds, 0, 0, 0) < 0) 
+	  if (select(fileno(stdin)+1, &readfds, 0, 0, 0) < 0)
 	    perror("select(read_char)");
 #endif
         }
@@ -1042,7 +1042,7 @@ void
 help (void)
 {
   struct cmd *c;
-  
+
   if (cursor_address)
     {
       for (c = cmdtab, currline = lines - 1 ;
@@ -1055,7 +1055,7 @@ help (void)
       if (clr_eos)
         tputs (clr_eos, lines - currline, putch);
     }
-      
+
   ttyoflush ();
   printf ("Type \"%s\" followed by the command character.  Commands are:",
           local_key_name (escape_char));
@@ -1144,7 +1144,7 @@ setloc(void)
 #else
   strcpy(myloc,loc);		/* save */
 #endif /* __OpenBSD__ */
-  restore();    
+  restore();
 }
 
 void

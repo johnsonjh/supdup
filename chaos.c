@@ -30,7 +30,7 @@ connect_to_named_socket(int socktype, char *path)
 {
   int sock, slen;
   struct sockaddr_un server;
-  
+
   if ((sock = socket(AF_UNIX, socktype, 0)) < 0) {
     perror("socket(AF_UNIX)");
     return -1;
@@ -61,7 +61,7 @@ static ssize_t write_all(int fd, void *buf, size_t n)
       return m;
     x += m;
     n -= m;
-  }    
+  }
   return x - (char *)buf;
 }
 
@@ -77,12 +77,12 @@ static ssize_t read_all(int fd, void *buf, size_t n)
       return m;
     x += m;
     n -= m;
-  }    
+  }
   return x - (char *)buf;
 }
 
 static int
-connection(int net, const char *host, const char *contact) 
+connection(int net, const char *host, const char *contact)
 {
   char buf[1000]; /*Bill Gates says this ought to be enough.*/
   char *bp, cbuf[2];

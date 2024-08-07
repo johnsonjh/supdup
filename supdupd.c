@@ -461,7 +461,7 @@ void supdup (int f, int p)
   *nfrontp++ = TDNOP;
   netflush ();
   sleep (2);
-	
+
   /*
    * Show banner that getty never gave.
    */
@@ -537,7 +537,7 @@ void supdup (int f, int p)
     }
   cleanup ();
 }
-	
+
 /* State for xmit fsm */
 #define	XS_DATA		0	/* base state */
 #define	XS_ESCAPE	1	/* supdup commands are escaped in TERMCAP */
@@ -694,7 +694,7 @@ void supxmit (void)
               state = c;
               piece_o_state = 0;
               break;
-				
+
             case KLUDGE_ESCAPE:
               /* Really shouldn't get two */
               /* of these but it's happening */
@@ -1149,7 +1149,7 @@ void cleanup (void)
 #ifdef TERMINFO
   clean_terminfo ();
 #endif /* TERMINFO */
-	
+
   rmut ();
 #ifdef TTYLOC
   unlink (ttyloc);
@@ -1509,7 +1509,7 @@ void init_terminfo (void )
   write (file, Numbers, 2 * header.nums_len);
   write (file, Strings, 2 * header.str_len);
   write (file, String_Table, header.strtab_len + 5);
-	
+
 }
 
 #endif /* TERMINFO */
